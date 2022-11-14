@@ -250,7 +250,135 @@ Hints - Return value of linux + SIGNALs
 
 https://www.devopsschool.com/blog/how-to-remove-all-docker-containers-all-images-all-volumes-and-all-networks/
 
+============================================================
+PS 				VS				Container
+----------------------------------------------
+PID1			PID1			PID1
 
+SYSTEMD		SYSTEMD		ANYTHING
+
+
+  107  docker ps -a
+  108  history
+  109  clear
+  110  ps -eaf
+  111  clear
+  112  docker ps -a
+  113  docker run -d httpd
+  114  clear
+  115  docker ps -a
+  116  docker exec e173f9ec6670 ps -eaf
+  117  clear
+  118  ls
+  119  echo $0
+  120  echo $?
+
+
+
+ 19  docker attach a94a0a84a6e4
+   20  docker ps
+   21  docker attach e173f9ec6670
+   22  docker ps
+   23  clear
+   24  docker run httpd
+   25  docker run ubuntu
+   26  docker ps -a
+   27  clear
+   28  cleasr
+   29  clear
+   30  docker run -d httpd
+   31  docker ps
+   32  docker run -d ubuntu
+   33  docker ps -a
+
+
+
+
+RUN
+----------------------------------
+pull + create + start + attach
+					PID1
+
+base - PID 1 - bash
+
+docker run -it ubuntu
+
+
+
+RUN -D
+----------------------------------
+pull + create + start + do not attach
+
+
+How to use Container?
+
+- GO INSIDE using SHELL
+	exec - this would exec executable inside a container
+
+	docker exec -it contid /bin/bash
+
+- ACCESS A APP USING NETWORK
+
+
+
+  128  history
+  129  clear
+  130  docker ps
+  131  docker exec 56dcb78a286c ls
+  132  docker exec 56dcb78a286c df -kh
+  133  clear
+  134  docker ps
+  135  docker exec -it 713218463f60 /bin/bash
+  136  clear
+  137  docker ps
+  138  docker run -it ubuntu
+  139  docker ps
+  140  clear
+  141  docker ps
+  142  docker exec 815401c0f229 ps -eaf
+  143  docker exec -it 815401c0f229 /bin/bash
+
+  141  docker ps
+  142  docker exec 815401c0f229 ps -eaf
+  143  docker exec -it 815401c0f229 /bin/bash
+  144  docker ps
+  145  history
+  146  clerar
+  147  clear
+  148  docker ps
+  149  docker inspect 713218463f60
+  150  clear
+  151  curl http://172.17.0.2
+
+
+  155  nmtui
+  156  clear
+  157  docker ps
+  158  clear
+  159  docker run -d  -p 80:80  httpd
+  160  docker run -d  -p 81:80  httpd
+  161  docker ps
+  162  ip a
+
+
+
+
+Other Commands for working with container?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+s
 
 
 
