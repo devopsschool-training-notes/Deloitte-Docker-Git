@@ -248,7 +248,7 @@ What is the diff between docker stop and docker kill
 Hints - Return value of linux + SIGNALs
 
 
-
+https://www.devopsschool.com/blog/how-to-remove-all-docker-containers-all-images-all-volumes-and-all-networks/
 
 
 
