@@ -1,0 +1,259 @@
+What is Docker?
+----------------------------
+		Container Mgmt Tool
+
+
+Tool
+	Saving Cost
+			PS			VS			Container			
+	Saving Time
+			1 H		5 min		1 Sec
+	IMP quality of Software
+
+Mgmt
+	Create  - start - stop - rem
+
+Container
+------------------------
+What are the resc you need to 1 APP?
+
+
+
+Centos
+--------------------
+Linux Kernal + ROOTFS(Centos - yum)
+
+Ubuntu
+Linux Kernal + ROOTFS(Centos - apt)
+==============================================
+What is Docker?
+	- Container mgmt tool
+	- Go
+	Release
+			Community
+			Enterprise
+	- 20.X
+	- By Soloman
+
+Docker Arch
+
+Human --> Docker Clinet --> Docker Server -> ContainerD -> Kernal
+			===================================
+						Docker engine
+
+Docker Component
+-----------------------
+Docker Engine
+
+
+Docker Image
+
+VM image
+--------------------------------
+BOOTFS - ROOT FS - USERFS - JAVA  - TOMCAT - APP
+-------------------------------------------------
+
+Docker Image
+ROOT FS - USERFS - JAVA  - TOMCAT - chat app
+---------------- -------------------------------
+	 Base							APP
+
+centos
+ROOT FS - USERFS
+
+java 
+centos + Java
+
+tomcat 
+java + tomcat
+
+zoom
+tomcat + zoom
+ROOT FS centos  - centos + Java + tomcat + zoom
+
+
+
+Registery
+			Repository  == docker image
+						version of filesystem
+				hub
+				google
+				artifactory
+				nexus
+
+
+Windows Kernal ---->
+						Windowso Image
+						- windows roofts(base)
+						- windows+dotnet == dotnet
+
+				docker run dotnet
+					----------
+
+					1 user
+					1 ROOTFS FROM dotnet IMAGE
+					1 PID
+					1 NET
+				
+				==== CONTAINER
+
+
+cONTAINER
+		
+DOCKER RUN IMAGE	
+
+
+Docker CliENT --> Docker Server -> ContainerD -> Kernal
+																1 mnt FROM IMAGE
+																1 NET
+																1 PID TREE
+																1 USER
+															=========
+															cONTAINER
+
+Write a notes on following with your learning with last session
+What is Docker?
+Why Docker?
+What is Container
+Docker workflow
+How container created?
+--------------------------
+
+
+How to install Docker?
+
+Lets Proof a container
+				== 1 u - 1 n - 1 pid - 1 mnt
+
+Container Lifecycle
+
+https://www.devopsschool.com/blog/docker-installation-and-configurations/
+
+
+ 13  which docker
+   14  which dockerd
+   15  which containerd
+   16  ps -eaf | grep docker
+   17  ps -eaf | grep containerd
+   18  clear
+   19  docker
+   20  clear
+   21  docker version
+   22  clear
+   23  docker info
+   24  clear
+   25  ls
+   26  docker help
+   27  clear
+   28  docker --help
+   29  clear
+   30  history
+
+
+PROOF
+  32  docker ps -a
+   33  clear
+   34  docker container stop $(docker container ls -aq)
+   35  docker rm -vf $(docker ps -a -q)
+   36  docker rmi -f $(docker images -a -q)
+   37  clear
+   38  docker images
+   39  docker ps
+   40  clear
+   41  ls
+   42  docker run -itd ubuntu
+   43  docker ps
+   44  c;ear
+   45  clear
+   46  df -kh
+   47  docker ps
+   48  docker exec e173f9ec6670 df -kh
+   49  docker exec e173f9ec6670 touch /tmp/raju.txt
+   50  docker exec e173f9ec6670 ls /tmp
+   51  ls /tmp
+   52  clear
+   53  ps
+   54  ps -eaf | grep 1924
+   55  ps -eaf | grep 1917
+   56  ps -eaf | grep 1013
+   57  ps -eaf
+   58  clear
+   59  docker ps
+   60  ps -eaf |
+   61  ps -eaf | grep containerd
+   62  clear
+   63  ip a
+   64  clear
+   65  docker ps
+   66  docker inspect e173f9ec6670
+   67  clear
+   68  docker ps
+   69  docker exec -it e173f9ec6670 /bin/bash
+   70  docker exec -it e173f9ec6670 ps -eaf
+   71  ps -eaf
+   72  docker exec -it e173f9ec6670 ps -eaf
+   73  history
+
+
+
+Container Lifecycle
+--------------------------------------
+https://www.devopsschool.com/blog/lifecycle-of-docker-containers/
+create -> start -> stop -> start -> restart -> pause -> unpause -> kill - remove
+
+
+75  docker images
+   76  docker pull httpd
+   77  docker images
+   78  clear
+   79  docker create httpd
+   80  docker ps
+   81  docker ps -a
+   82  docker create --name raj 1httpd
+   83  docker create --name raj1 httpd
+   84  docker create --name raj2 httpd
+   85  clear
+   86  dcoker ps -a
+   87  docker  ps -a
+   88  docker start f140b7c7f2c7
+   89  docker  ps -a
+   90  docker start raj1
+   91  docker  ps -a
+   92  docker stop raj1
+   93  docker  ps -a
+   94  docker  restart e173f9ec6670
+   95  docker  ps -a
+   96  docker pause f140b7c7f2c7
+   97  docker  ps -a
+   98  docker unpause f140b7c7f2c7
+   99  docker  ps -a
+  100  clear
+  101  docker ps
+  102  docker ps -a
+  103  docker kill f140b7c7f2c7
+  104  docker ps -a
+  105  docker rm e173f9ec6670
+  106  docker rm e1a56ee692ff 69357655c7dc f140b7c7f2c7
+  107  docker ps -a
+
+
+
+Assignment on Debug.school
+---------------------------
+what is the diff between docker pause and docker unpause
+Hint - docker stats
+
+
+What is the diff between docker stop and docker kill
+Hints - Return value of linux + SIGNALs
+
+
+
+
+
+
+
+
+
+
+
