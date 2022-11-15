@@ -166,6 +166,54 @@ Each layer - we have uniq shad ID
 What is a Docker image. Explain in 10 points.
 
 
+======================================================================
+How to create an image?
+-----------------------------
+Method - 1 - using containers - 1 Layer a time == docker commit
+
+Method - 2 - using Dockerfile - N Layer a time == docker build
+
+
+--------------------------------------------------------
+Method - 1 - using containers - 1 Layer a time == docker commit
+
+IMAGE= ubuntu + git + apache2 + java
+
+
+237  docker run -itd --name raj1 ubuntu
+  238  docker ps
+  239  docker exec -it raj1 /bin/bash
+  240  docker ps
+  241  clear
+  242  docker history ubuntu
+  243  docker ps
+  244  docker commit -m"up-ub-git-ap-java" -a"Rajesh Kumar" 8bd9e00c2a8f up-ub-git-ap-java
+  245  docker history ubuntu
+  246  docker history up-ub-git-ap-java
+  247  docker images
+  248  docker run -itd --name newcont up-ub-git-ap-java
+  249  docker ps
+  250  dcoker exec e72c7cf7c389 git
+  251  docker exec e72c7cf7c389 git
+  252  docker exec e72c7cf7c389 java
+  253  docker exec e72c7cf7c389 which apache2
+
+
+INSIDE Container
+
+apt-get update
+apt-get install git
+apt-get install apache2
+apt-get install openjdk-11-jdk -y
+
+
+
+
+
+
+
+
+
 
 
 
