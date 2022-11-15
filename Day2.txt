@@ -326,10 +326,26 @@ EXPOSE
 
 
 
+How to set pid 1?
+					ANYTHING
+
 ENTRYPOINT  VS CMD
+===============================
 
+CMD can be replaced
+ENTRYPOINT can not be ENTRYPOINT
 
+CMD passwed to the ENTRYPOINT would be added a param
 
+X -- cmd "echo"
+Y -- entrypoint "echo"
+
+docker run y rajesh
+
+		"echo rajesh"
+========================================
+
+https://www.devopsschool.com/blog/example-and-sample-programs-of-dockerfile/
 
 
 
