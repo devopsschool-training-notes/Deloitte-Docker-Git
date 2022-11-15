@@ -206,13 +206,127 @@ apt-get install git
 apt-get install apache2
 apt-get install openjdk-11-jdk -y
 
+=================================================================
+--------------------------------------------------------
+Method - 2 - using Dockerfile - N Layer a time == docker build
+
+Rules of Dockerfile
+---------------------------
+- each line would create 1 Layer
+- Changes of the line would be done in the container of pre layer.
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get install openjdk-11-jdk -y
+RUN apt-get install apache2 -y
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN touch /opt/raju1.txt
+RUN touch /opt/raju2.txt
+RUN touch /opt/raju3.txt
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN touch /opt/raju1.txt && touch /opt/raju2.txt && touch /opt/raju3.txt
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN touch /opt/raju1.txt && touch /opt/raju2.txt && touch /opt/raju3.txt
+copy index.html /opt/
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN touch /opt/raju1.txt && touch /opt/raju2.txt && touch /opt/raju3.txt
+copy index.html /opt/
+ENV JAVA_HOME /opt/java
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN touch /opt/raju1.txt && touch /opt/raju2.txt && touch /opt/raju3.txt
+copy index.html /opt/
+ENV JAVA_HOME /opt/java
+RUN useradd rajesh
+USER rajesh
+
+FROM ubuntu
+MAINTAINER Rajesh Kumar devops@rajeshkumar.xyz
+RUN touch /opt/raju1.txt && touch /opt/raju2.txt && touch /opt/raju3.txt
+COPY index.html /opt/
+ENV JAVA_HOME /opt/java
+RUN useradd rajesh
+USER rajesh
+WORKDIR /opt
+
+
+ADD - COPY + EXTRACT
+EXPOSE
+
+============================================================
+
+ 263  ls
+  264  vi dockerfile
+  265  lear
+  266  clear
+  267  docker build -t raju1 .
+  268  clear
+  269  ls
+  270  docker images
+  271  docker run -itd raju1
+  272  docker ps
+  273  clear
+  274  docker exec 1c93417996be git
+  275  clear
+  276  docker exec 1c93417996be java
+  277  clear
+  278  docker exec 1c93417996be which apache2
+  279  docker images
+  280  docker history raju1
+  281  docker history ubuntu
+  282  clear
+  283  ls
+  284  vi doc1
+  285  docker build -t doc1 -f doc1 .
+  286  clear
+  287  ls
+  288  vi doc2
+  289  ls
+  290  touch index.html
+  291  ls
+  292  docker build -t doc2 -f doc2 .
+  293  clear
+  294  docker images
+  295  docker run doc2 ls /opt
+  296  docker ps -a
+  297  clear
+  298  ls
+  299  vi doc3
+  300  docker build -t doc3 -f doc3 .
+  301  clear
+  302  docker run doc3 env
+  303  docker run doc3 id
+  304  clear
+  305  ls
+  306  vi doc4
+  307  docker build -t doc4 -f doc4 .
+  308  clear
+  309  docker run doc4 id
+  310  docker run -itd doc4
+  311  docker ps
+  312  docker exec -it 7a606e1c522e /bin/bash
+  313  clear
+  314  ls
+  315  vi doc5
+  316  docker build -t doc5 -f doc5 .
+  317  clear
+  318  docker run -it doc5
+  319  clear
 
 
 
-
-
-
-
+ENTRYPOINT  VS CMD
 
 
 
