@@ -90,6 +90,99 @@ Assignment on Debug.school
 ------------------------------
 What is the use of "docker update"? Hint - docker run --help
 What is the use of "docker wait"?
+========================================================
+
+What is a Docker Image?
+----------------------------------------------
+Docker Image == Respository == Just a name ===> To a Layer ID
+
+Respository
+				Version of filesystems
+
+- Consist of multiple filesystems
+- filsystem versioning
+	- ROOTFS + USERFS	+ APPFS(JAVA) + APPFS(TOMCAT) = APP
+	------------------
+		BASE Image
+
+Each layer - we have uniq shad ID
+
+ 124  docker container stop $(docker container ls -aq)
+  125  docker rm -vf $(docker ps -a -q)
+  126  docker rmi -f $(docker images -a -q)
+  127  clear
+  128  docker images
+  129  docker info
+  130  clear
+  131  cd /var/lib/docker/
+  132  clear
+  133  ls
+  134  cd overlay2
+  135  clear
+  136  ls
+  137  pwd
+  138  du -sh .
+  139  docker pull httpd
+  140  clear
+  141  ls
+  142  docker inspect httpd
+  143  ls
+  144  cler
+  145  ls
+  146  clear
+  147  du -h --max-dept=1
+  148  cd ./f93b77aa853d47e816e2a2db069377bf39ca641964bcdb6afb75741f9384b705
+  149  ls
+  150  cd diff
+  151  ls
+  152  cd ..
+  153  clear
+  154  ls
+  155  cd ..
+  156  ls
+  157  du -h --max-dept=1
+  158  cd ./6cc121c40cbd2f8115efa6ae4d43df75282166014904cf4cc12acc1466fbe096/diff/
+  159  ls
+  160  cd -
+  161  du -h --max-dept=1
+  162  cd ./e7a59008329c6512803a4de3ff175f57b37d2dc69e88870ed256acfe6a4e6d93
+  163  clear
+  164  ls
+  165  cd diff/
+  166  ls
+  167  cd -
+  168  clear
+  169  ls
+  170  cd ../..
+  171  ls
+  172  cd overlay2/
+  173  clear
+  174  docker history httpd
+  175  ls ../
+  176  clear
+
+===================================================
+
+What is a Docker image. Explain in 10 points.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
