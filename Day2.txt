@@ -1,0 +1,97 @@
+docker version
+docker info
+docker pull
+docker create
+docker start 
+docker stop
+docker restart 
+docker pause
+docker unpause
+docker kill
+docker rm
+docker images
+docker ps
+docker exec 
+docker attach
+docker inspect 
+docker run
+===============================================
+https://www.devopsschool.com/blog/the-docker-command-line-complete-referenece/
+
+
+docker cp get-docker.sh 64987ad85fe9:/tmp
+docker cp 64987ad85fe9:/tmp/get-docker.sh .
+
+
+  64  docker exec -it 64987ad85fe9 /bin/bash
+   65  clear
+   66  docker ps
+   67  docker diff 64987ad85fe9
+   68  history
+
+
+  71  docker inspect 64987ad85fe9
+   72  eway": "172.17.0.1",
+   73  clear
+   74  docker inspect ubunut
+   75  docker inspect ubuntu
+   76  clear
+   77  docker ps
+   78  docker port 64987ad85fe9
+   79  docker run -d -p 80:80 httpd
+   80  docker ps
+   81  docker port 77145960872d
+
+  81  docker port 77145960872d
+   82  history
+   83  clear
+   84  ls
+   85  docker ps
+   86  docker rename 77145960872d raju1
+   87  docker ps
+   88  clear
+   89  docker run -h
+   90  docker run -help
+   91  docker run --help
+   92  clear
+   93  docker diff 64987ad85fe9
+   94  clear
+   95  docker ps
+   96  docker logs 77145960872d
+   97  docker logs 64987ad85fe9
+   98  docker inspect 77145960872d
+   99  clear
+  100  curl http://172.17.0.3
+  101  docker logs 77145960872d
+  102  clear
+  103  ls
+  104  docker ps
+  105  docker attach 64987ad85fe9
+  106  clear
+  107  docker ps
+  108  docker logs 64987ad85fe9
+  109  clear
+  110  docker stats
+  111  docker pause 77145960872d
+  112  docker stats
+  113  docker stats 77145960872d
+  114  clear
+  115  docker run -d httpd
+  116  docker ps
+  117  ps -eaf | grep containerd
+  118  docker ps
+  119  docker top c249648ae864
+  120  clear
+  121  docker events
+
+
+
+Assignment on Debug.school
+------------------------------
+What is the use of "docker update"? Hint - docker run --help
+What is the use of "docker wait"?
+
+
+
+
+
