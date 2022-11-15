@@ -346,6 +346,50 @@ docker run y rajesh
 ========================================
 
 https://www.devopsschool.com/blog/example-and-sample-programs-of-dockerfile/
+==================================================
+How to share an image?
+----------------------------------
+Method - 1 - Tar Ball
+
+ 333  docker images
+  334  ls
+  335  docker save -o doc5.tar doc5
+  336  ls
+  337  docker ps -a
+  338  docker rm 156e30f6aca6
+  339  clear
+  340  docker images
+  341  docker rmi doc5
+  342  clear
+  343  docker images
+  344  docker load -i doc5.tar
+  345  docker images
+
+
+Method - 2 - Using registry
+
+346  history
+  347  clear
+  348  docker images
+  349  docker login
+  350  clear
+  351  docker images
+  352  docker push doc4
+  353  docker tag doc4 devopsschools/nov2022
+  354  clear
+  355  docker images
+  356  docker push devopsschools/nov2022
+  357  docker tag doc4 devopsschools/nov2022:v1
+  358  docker push devopsschools/nov2022:v1
+  359  history
+
+
+
+
+
+
+
+
 
 
 
