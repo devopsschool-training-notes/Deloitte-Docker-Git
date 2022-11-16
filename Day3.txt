@@ -1,3 +1,13 @@
+Docker(COntainer) ---Dockerfile---> Docker Compose --> Kubernetes --> OpenShift
+
+================								=============		============
+	
+COMPUTE										pod
+STOR											
+NET
+SEC
+
+
 Container issues - data is not persistence
 
 Container is deleted == data is gone
@@ -129,5 +139,136 @@ TYPES
 Assignment 
 Q - How can we store container data in memory using docker volume 
 https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+=====================================================================================
+
+DRIVER		POLICY
+
+
+
+
+
+
+
+
+
+ 150  docker network
+  151  docker network ls
+  152  clear
+  153  ifconfig
+  154  ip a
+  155  clear
+  156  docker network ls
+  157  docker os
+  158  clear
+  159  docker ps
+  160  docker inspect 36b9a261e390
+  161  ip a
+  162  clear
+  163  nmtui
+  164  docker network ls
+  165  docker ps
+  166  dcoker inspect bridge
+  167  docker inspect bridge
+  168  clear
+  169  docker network ls
+  170  docker network
+  171  docker network create app1
+  172  docker network ls
+  173  docker network inspect app1
+  174  docker network create app1 --help
+  175  clear
+  176  docker network ls
+  177  docker run -itd --net=app1 ubuntu
+  178  docker ps
+  179  docker inspect f3d543cfd313
+  180  ping 72.18.0.2
+  181  ping 172.18.0.2
+  182  ping 172.17.0.2
+  183  clear
+  184  docker ps
+  185  docker rename f3d543cfd313 app1
+  186  docker inspect 16bb163c0358
+  187  docker ps
+  188  docker rename 16bb163c0358 default
+  189  clear
+  190  docker ps
+  191  docker stop 36b9a261e390 beebd5045f04
+  192  clear
+  193  docker ps
+  194  docker exec -it app1 /bin/bash
+  195  clear
+  196  docker ps
+  197  docker network
+  198  docker network connect 16bb163c0358  app1
+  199  docker network connect app1 16bb163c0358
+  200  cleaf
+  201  clear
+  202  docker inspect 16bb163c0358
+  203  clear
+  204  docker network
+  205  docker network disconnect app1 16bb163c0358
+  206  docker inspect 16bb163c0358
+  207  clear
+  208  docker network ls
+  209  docker network
+
+
+ 209  docker network
+  210  history
+  211  docker network ls
+  212  ip a
+  213  clear
+  214  docker container stop $(docker container ls -aq)
+  215  docker rm -vf $(docker ps -a -q)
+  216  clear
+  217  ls
+  218  ip a
+  219  docker network ls
+  220  docker network rm app1
+  221  clear
+  222  ip a
+  223  docker network ls
+  224  clear
+  225  ip a
+  226  docker network ls
+  227  clear
+  228  ip a
+  229  docker run -itd ubuntu
+  230  ip a
+  231  docker run -itd ubuntu
+  232  ip a
+  233  docker network create dev
+  234  ip a
+  235  docker network create dev -h
+  236  docker network create qa --subnet=172.30.0.1/16
+  237  docker network ls
+  238  docker network inspect qa
+  239  clear
+  240  docker network ls
+  241  history
+
+
+ 240  docker network ls
+  241  history
+  242  clear
+  243  docker network ls
+  244  ip a
+  245  docker run -itd --net=host ubuntu
+  246  docker ps
+  247  docker exec -it 30ae35eb76fb /bin/bash
+  248  docker run -itd --net=none ubuntu
+  249  history
+
+
+
+
+
+
+
+
+
+
+
+
 
 
