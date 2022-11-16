@@ -1,0 +1,133 @@
+Container issues - data is not persistence
+
+Container is deleted == data is gone
+========================================
+VOLUME
+
+TYPES
+- volume	---> /var/lib/docker/volume
+- mountfs	---> anyplace in host
+- tempfs ----> memory
+
+39  docker volume
+   40  docker volume ls
+   41  cd /var/lib/docker/volumes/
+   42  clear
+   43  ls
+   44  cd 6724d9d4f4a99e28190d15c984444b1d99b39db6a1acc5839b5607535aff35d5
+   45  ls
+   46  clwar
+   47  clear
+   48  ls
+   49  cd _data/
+   50  ls
+   51  clear
+   52  cd ..
+   53  clear
+   54  ls
+   55  cd ..
+   56  clear
+   57  pwd
+   58  ls
+   59  docker volume ls
+   60  docker volume prune
+   61  docker volume ls
+   62  ls
+   63  clear
+   64  docker ps -a
+   65  docker rm -vf $(docker ps -a -q)
+   66  clear
+   67  docker volume ls
+   68  docker volume
+   69  docker volume create dev
+   70  clear
+   71  ls
+   72  docker volume ls
+   73  docker volume create
+   74  docker volume ls
+   75  docker volume
+   76  docker volume rm dev
+   77  docker volume ls
+   78  docker volume prune c6d29de76a31c2f512120a447df8b4d5ab92e79ff8b9655bbc0cebaf2ba05ea8
+   79  docker volume ls
+   80  docker volume prune
+   81  docker volume ls
+   82  docker volume
+   83  clear
+   84  docker volume create dev
+   85  docker volume inspect dev
+   86  history
+
+
+ 87  clear
+   88  docker volume ls
+   89  docker volume create qa
+   90  clear
+   91  docker volume ls
+   92  docker run -itd -v dev:/opt/ramukaka ubuntu
+   93  docker ps
+   94  docker exec 8743fecde302 df -kh
+   95  docker exec 8743fecde302 touch /opt/ramukaka/raju.txt
+   96  docker exec 8743fecde302 ls /opt/ramukaka/
+   97  ls
+   98  cd dev/
+   99  ls
+  100  cd _data/
+  101  ls
+  102  touch hey.txt
+  103  docker exec 8743fecde302 ls /opt/ramukaka/
+  104  docker stop 8743fecde302
+  105  ls
+  106  docker rm 8743fecde302
+  107  ls
+  108  docker run -itd -v dev:/opt/ramukaka ubuntu
+  109  docker ps
+  110  docker exec 16bb163c0358 ls /opt/ramukaka/
+  111  docker run -itd -v dev:/opt/ramukaka -v qa:/tmp/qa ubuntu
+  112  docker ps
+  113  docker exec beebd5045f04 df -kh
+  114  docker exec beebd5045f04 ls /opt
+  115  docker exec beebd5045f04 ls /tmp
+  116  docker exec beebd5045f04 touch /opt/ramukaka/india.txt
+  117  docker exec beebd5045f04 touch /tmp/qa/usa.txt
+  118  cd ..
+  119  ls
+  120  cd ..
+  121  ;s
+  122  ls
+  123  find . -name india.txt
+  124  find . -name usa.txt
+
+ 124  find . -name usa.txt
+  125  history
+  126  clear
+  127  cd /opt/
+  128  ls
+  129  mkdir bkp
+  130  cd bkp/
+  131  pwd
+  132  ls
+  133  pwd
+  134  docker run -itd -v /opt/bkp:/opt/ramu ubuntu
+  135  docker ps
+  136  docker exec 36b9a261e390 ls /opt/ramu
+  137  docker exec 36b9a261e390 df -kh
+  138  docker exec 36b9a261e390 touch /opt/ramu/docker.txt
+  139  ls
+  140  ls /var/lib/docker/volumes/
+  141  docker ps
+  142  docker inspect 16bb163c0358
+  143  docker inspect 16bb163c0358 | grep dev
+  144  dockerr ps
+  145  docker ps
+  146  docker inspect beebd5045f04 | grep dev
+  147  docker volume ls
+
+
+
+
+Assignment 
+Q - How can we store container data in memory using docker volume 
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+
