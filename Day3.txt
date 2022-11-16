@@ -259,15 +259,101 @@ DRIVER		POLICY
   248  docker run -itd --net=none ubuntu
   249  history
 
+=============================================
+Docker Compose
+----------------------------------
+TOOL
+	READING
+			docker-compose.yaml
+
+SERVICE(S)
+	service1
+		build - dockerfile
+		env
+		port
+		vol
+		net
+		
+
+	service2
+		build - dockerfile
+		env
+		port
+		vol
+		net
+
+	service3
+		build - dockerfile
+		env
+		port
+		vol
+		net
+----------------------------------------------
+docker-compose up -d
+docker-compose down
+docker-compose ps
+docker-compose logs
+
+
+https://www.devopsschool.com/blog/collection-example-of-docker-compose-program/
 
 
 
+version: '2'
+services:
+  wordpress:
+    image: wordpress:latest # https://hub.docker.com/_/wordpress/
+    ports:
+      - 80:80 # change ip if required
+    volumes:
+      - ./wp-app:/var/www/html # Full wordpress project
+      #- ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name # Plugin development
+      #- ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name # Theme development
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: password
+    depends_on:
+      - db
+    networks:
+      - wordpress-network
+  db:
+    image: mysql:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    ports:
+      - 3306:3306 # change ip if required
+    volumes:
+      - ./wp-data:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - wordpress-network
+networks:
+  wordpress-network:
+      driver: bridge
 
 
-
-
-
-
+ 252  vi docker-compose.yaml
+  253  echo $PATH
+  254  sudo curl -SL https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-linux-x86_64 -o /usr/bin/docker-compose
+  255  sudo chmod 755 /usr/bin/docker-compose
+  256  docker compose version
+  257  docker images
+  258  clear
+  259  docker-compose up -d
+  260  docker-compose ps
+  261  ip a
+  262  docker-compose ps
+  263  docker-compose stop
+  264  docker-compose ps
+  265  docker-compose start
+  266  docker-compose ps
+  267  docker-compose --help
+  268  docker-compose ps
+  269  docker-compose down
+  270  docker-compose up -d --scale wordpress=5
+  271  docker-compose ps
 
 
 
