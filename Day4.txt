@@ -118,6 +118,70 @@ Tag
 
 
 
+============================================
+Github
+Gitlab
+Bitbucket
+AWS
+Azure
+GC
+Gerrit
+
+--------
+-------
+
+============================================================================================
+
+How to do undo?
+-------------------------------------------
+
+ 594  git status
+  595  touch clean.txt
+  596  git status
+  597  git clean -f -d
+  598  git status
+  599  ls
+  600  clear
+  601  touch reset.txt\
+  602  touch reset.txt
+  603  git status
+  604  git add .
+  605  git status
+  606  git reset reset.txt
+  607  git status
+  608  clear
+  609  git clean -f -d
+  610  touch good.txt;git add .;git commit -m"good code"
+  611  touch bad.txt;git add .;git commit -m"bad code"
+  612  git log
+  613  clear
+  614  git log --oneline
+  615  git diff dd3d36d 6182b74
+  616  git revert
+  617  clear
+  618  git log --oneline
+  619  git revert 6182b74
+  620  clear
+  621  git log --oneline
+  622  git diff 4e2eed7 6182b74
+  623  git diff 4e2eed7 dd3d36d
+  624  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
