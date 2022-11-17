@@ -1,0 +1,66 @@
+What is Git?
+=============================
+
+Windows
+		-exe
+		https://git-scm.com/
+
+		git bash
+
+Linux
+		apt-get install git
+		yum install git -y
+Mac 
+		dmg
+=======================================
+Step 1 - create a local repo
+
+Step 2 - Write a code
+
+Step 3 - Add a code to git [[ from workdir to stage]]
+
+------------------------
+git config user.name "Rajesh Kumar"
+git config user.email "devops@rajeshkumar.xyz"
+git config --list
+------------------------
+Step 4 - Commit a code to git [[ from stage to repo]]
+
+Step 5 - See a commited changes
+
+501  git init
+ 507  vi code1.java
+  508  touch code2.java
+  509  start .
+  510  git add code1.java
+  511  git config user.name "Rajesh Kumar"
+  512  git config user.email "devops@rajeshkumar.xyz"
+  513  git config --list
+ 
+ 
+  519  git commit -m"adding first"
+  520  git log
+  521  history
+
+
+
+$ git log
+commit c8db5f306a1cf11fad6ba0fb1273f7fbad7f2e10 (HEAD -> master)
+Author: Rajesh Kumar <devops@rajeshkumar.xyz>
+Date:   Thu Nov 17 09:52:04 2022 +0530
+
+    adding first
+
+c8db5f306a1cf11fad6ba0fb1273f7fbad7f2e10 = COMMIT ID
+
+CHECKSUM by SHA1
+
+
+FILE VERSIONING
+FILESYSTEM VERSIONING - TRUE FOR GIT
+
+
+
+
+
+
