@@ -59,6 +59,85 @@ CHECKSUM by SHA1
 FILE VERSIONING
 FILESYSTEM VERSIONING - TRUE FOR GIT
 
+=======================================================
+How to knw which file at what stage?
+How to add all files
+how to commit sel file
+how to delete file
+how to rename
+how to move
+How to see older version?
+
+ 526  git status
+  527  ls
+  528  git add .
+  529  git status
+  530  ls
+  531  vi code1.java
+  532  git status
+  533  git commit -m"code2" code2.java
+  534  git status
+  535  git add --all
+  536  git commit -m"all"
+  537  git log
+  538  ls
+  539  git status
+  540  ls
+  541  git rm code3.java
+  542  ls
+  543  git status
+  544  git commit -m"code3 delete"
+  545  git status
+  546  ls
+  547  git log
+  548  clear
+  549  git log
+  550  git checkout f0fa7ef9909ef3527a5421adf6a62aeaec80fd9c
+  551  ls
+  552  git checkout master
+  553  clear
+  554  ls
+  555  git mv code2.java
+  556  git mv code2.java code22.java
+  557  git status
+  558  ls
+  559  mkdir src
+  560  git status
+  561  git mv code1.java src/
+  562  git status
+  563  git commit -m"rename-move"
+  564  git status
+  565  ls
+
+
+How to undoing?
+
+
+Branching & merging
+Tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
