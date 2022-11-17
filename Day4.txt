@@ -414,14 +414,52 @@ How to merge 2 branches?
 
 
 - Cherry-pick
+=====================================================
+
+ 658  git checkout fea1
+  659  touch cheryy1.txt;git add .;git commit -m"adding cherrey1"
+  660  touch cheryy2.txt;git add .;git commit -m"adding cherrey2"
+  661  touch cheryy3.txt;git add .;git commit -m"adding cherrey3"
+  662  touch cheryy4.txt;git add .;git commit -m"adding cherrey4"
+  663  git log --oneline
+  664  git checkout master
+  665  ls
+  666  git cherry-pick 8c1d053
+  667  ls
+  668  clear
 
 
 
 
+THIS IS RAJESH1
+THIS IS RAJESH2
+THIS IS RAJESH3
 
+How to resolve conflict
 
+ 672  ls
+  673  vi fea1.txt
+  674  git add fea1.txt
+  675  git commit -m"adding
+"
+  676  more fea1.txt
+  677  vi fea1.txt
+  678  git checkout fea1
+  679  vi fea1.txt
+  680  git add .
+  681  git commit -m"adding"
+  682  git checkout master
+  683  git merge fea1
+  684  git status
+  685  vi fea1.txt
+  686  git add fea1.txt
+  687  git commit -m"adding"
+  688  git status
+  689  git merge fea1
+  690  history
 
-
+================================
+pull === fetch + merge
 
 
 
